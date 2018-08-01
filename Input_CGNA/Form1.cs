@@ -1,12 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Security;
 
 namespace Input_CGNA
 {
@@ -15,6 +10,27 @@ namespace Input_CGNA
         public CGNA()
         {
             InitializeComponent();
+            txt_ARQ.Tag = txt_ARQ.Text;
+        }
+
+        private void btn_Arq_Click(object sender, EventArgs e)
+        {
+            DialogResult rs = openFILE.ShowDialog();
+            if (rs == DialogResult.OK)
+            {
+                txt_ARQ.Text = openFILE.FileName;
+                openFILE.Dispose();
+            }
+        }
+
+        private void btn_CANC_Click(object sender, EventArgs e)
+        {
+            Dispose();
+            Close();
+        }
+        private void btn_Ini_Click(object sender, EventArgs e)
+        {
+            new Processa_CGNA();
         }
     }
 }
