@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Input_CGNA
 {
-    public partial class Form1 : Form
+    public partial class CGNA : Form
     {
-        public Form1()
+        public CGNA()
         {
             InitializeComponent();
         }
